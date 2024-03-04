@@ -1,0 +1,53 @@
+.majax-dropdown {
+  position: relative;
+}
+.majax-dropdown a[role="dropdown-trigger"] {
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+.majax-dropdown a[role="dropdown-trigger"]::after {
+  position: absolute;
+  content: "⌄";
+  right: 0;
+}
+
+.majax-dropdown-content {
+  position: absolute;
+  display: none;
+  background-color: var(--majax-dropdown-background-color, #fff);
+  min-width: 10rem;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  border: 1px solid var(--majax-dropdown-border-color, #e0e0e0);
+  border-radius: var(--majax-border-radius, 0.25rem);
+  margin-top: 4px;
+}
+
+.majax-dropdown-content.right {
+  right: 0;
+}
+.majax-dropdown-content.left {
+  left: 0;
+}
+
+.majax-dropdown.active .majax-dropdown-content {
+  display: block;
+  animation: dropdown 300ms ease-in-out forwards;
+  transform-origin: top center;
+}
+
+@keyframes dropdown {
+  0% {
+    transform: scaleY(0)
+  }
+  80% {
+    transform: scaleY(1.1)
+  }
+  100% {
+    transform: scaleY(1)
+  }
+}

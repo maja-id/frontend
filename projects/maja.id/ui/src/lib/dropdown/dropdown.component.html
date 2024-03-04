@@ -1,0 +1,6 @@
+<div class="majax-dropdown" [ngClass]="show ? 'active' : ''">
+  <ng-content select="[role=dropdown-trigger]"></ng-content>
+  <div class="majax-dropdown-content" [ngClass]="position">
+    <ng-content select="[role=dropdown-content]"></ng-content>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+.majax-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+.majax-layout.has-sidebar {
+  /* width: calc(100vw - var(--majax-sidebar-width, 15rem) - var(--majax-sidebar-border-width, 1px)); */
+  padding-left: calc(var(--majax-sidebar-width, 15rem) + var(--majax-sidebar-border-width, 1px));
+}
+.majax-layout.has-footer {
+  height: calc(100vh - var(--majax-footer-height, 1.5rem));
+  padding-bottom: var(--majax-footer-height, 1.5rem);
+}

@@ -1,0 +1,4 @@
+.majax-header {
+  height: var(--majax-header-height, 3rem);
+  border-bottom: var(--majax-border-width, 1px) solid var(--majax-header-border-color, #ebebeb);
+}

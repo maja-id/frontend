@@ -1,0 +1,32 @@
+.majax-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: var(--majax-avatar-size-md, 1.75rem);
+  height: var(--majax-avatar-size-md, 1.75rem);
+  border-radius: calc(var(--majax-avatar-size-md, 1.75rem) / 2);
+  white-space: nowrap;
+  overflow: hidden;
+}
+.majax-avatar img {
+  object-fit: cover;
+}
+
+.majax-avatar.lg {
+  width: var(--majax-avatar-size-lg, 2rem);
+  height: var(--majax-avatar-size-lg, 2rem);
+  border-radius: calc(var(--majax-avatar-size-lg, 2rem) / 2);
+}
+
+.majax-avatar.xl {
+  width: var(--majax-avatar-size-xl, 2.5rem);
+  height: var(--majax-avatar-size-xl, 2.5rem);
+  border-radius: calc(var(--majax-avatar-size-xl, 2.5rem) / 2);
+}
+
+.majax-avatar.sm {
+  width: var(--majax-avatar-size-sm, 1.5rem);
+  height: var(--majax-avatar-size-sm, 1.5rem);
+  border-radius: calc(var(--majax-avatar-size-sm, 1.5rem) / 2);
+}

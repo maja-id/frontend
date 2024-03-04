@@ -1,0 +1,19 @@
+.majax-sidebar {
+  width: var(--majax-sidebar-width, 15rem);
+  background-color: var(--majax-sidebar-background-color, #fff);
+  border-right: 1px solid var(--majax-sidebar-border-color, #e0e0e0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: 0;
+  height: 100vh;
+  overflow: auto;
+}
+
+.majax-sidebar.rtl {
+  border-right: none;
+  border-left: 1px solid var(--majax-sidebar-border-color, #e0e0e0);
+  left: auto;
+  right: 0;
+}

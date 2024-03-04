@@ -1,0 +1,8 @@
+<button
+  class="majax-default-button"
+  [type]="type"
+  (click)="onClick($event)"
+  [ngClass]="buttonType"
+  [ngStyle]="customStyle" #majaxButton>
+  <ng-content></ng-content>
+</button>

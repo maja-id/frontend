@@ -1,0 +1,38 @@
+:root {
+  --majax-primary-color: #007bff;
+  --majax-border-radius: 0.3rem;
+  --majax-border-width: 1px;
+  --majax-border-color: #ebebeb;
+  --majax-font-family: Inter, 'Noto Color Emoji', sans-serif;
+  --majax-font-size: 16px;
+  --majax-background-color: #fff;
+  --majax-text-color: #4a4a4a;
+  --majax-box-shadow: 0 0 2px 0 rgba(122, 122, 122, 0.1);
+
+  /* Sidebar */
+  --majax-sidebar-width: 15rem;
+  --majax-sidebar-background-color: #f8f2f2;
+  --majax-sidebar-border-color: var(--majax-border-color);
+  --majax-sidebar-border-width: 1px;
+  /* End of Sidebar */
+
+  /* Footer */
+  --majax-footer-height: 1.5rem;
+  --majax-footer-background-color: #fff;
+  --majax-footer-border-color: var(--majax-border-color);
+  /* End of Footer */
+
+  /* Header */
+  --majax-header-height: 3rem;
+  --majax-header-background-color: #fff;
+  --majax-header-border-color: var(--majax-border-color);
+  /* End of Header */
+  /* Dropdown */
+  --majax-dropdown-background-color: #fff;
+
+  /* Button */
+  --majax-button-primary-color: var(--majax-primary-color);
+  --majax-button-primary-color-focus: #005cb2;
+  --majax-button-flat-color: #f0f0f0;
+  --majax-button-flat-color-focus: #e0e0e0;
+}

@@ -1,0 +1,12 @@
+.majax-footer {
+  height: var(--majax-footer-height, 2rem);
+  background-color: var(--majax-footer-background-color, #fff);
+  border-top: var(--majax-border-width, 1px) solid var(--majax-footer-border-color, #ebebeb);
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: calc(var(--majax-sidebar-width, 15rem) + var(--majax-sidebar-border-width, 1px));
+  display: flex;
+}

@@ -1,0 +1,14 @@
+@import './themes/default/variable.css';
+@import './themes/default/reset.css';
+
+body {
+  color: var(--majax-text-color);
+  background-color: var(--majax-background-color);
+}
+button {
+  line-height: 0;
+}
+ng-icon > svg {
+  width: var(--ng-icon__size, 1rem);
+  height: var(--ng-icon__size, 1rem);
+}

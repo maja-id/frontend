@@ -1,0 +1,155 @@
+.form-title {
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+.form-group > *:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.input-group > *:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.input-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--majax-text-secondary-color, #6c757d);
+}
+.text-danger {
+  color: var(--majax-text-danger-color, #dc3545);
+}
+.input-group > button {
+  font-size: 0.875rem;
+  padding-bottom: 0.25rem;
+}
+.input-group > button > svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+input {
+  border: 1px solid var(--majax-border-color);
+  border-radius: var(--majax-border-radius);
+  outline: none;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  box-shadow: var(--majax-box-shadow);
+}
+
+.input-error {
+  border-color: var(--majax-text-danger-color, #dc3545);
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+.input-checkbox-wrapper,
+.input-radio-wrapper {
+  padding-top: 0.25rem;
+}
+.input-checkbox-wrapper > *:not(:last-child),
+.input-radio-wrapper > *:not(:last-child) {
+  margin-bottom: 0.625rem;
+}
+.input-checkbox-wrapper > div,
+.input-radio-wrapper > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.input-checkbox-wrapper > div > *:not(:last-child),
+.input-radio-wrapper > div > *:not(:last-child) {
+  margin-right: 0.25rem;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.25rem;
+}
+.input-radio-label {
+  display: flex;
+  flex-direction: row;
+  margin-top: -0.25rem;
+}
+.input-radio-label .label-text {
+  cursor: pointer;
+}
+.input-radion-label .label-description {
+  font-size: 0.75rem;
+  color: var(--majax-text-secondary-color, #6c757d);
+}
+.dropzone-container {
+  width: 100%;
+  border-radius: var(--majax-border-radius, 0.25rem);
+  border: 1px solid var(--majax-border-color, #e0e0e0);
+}
+.dropzone-input {
+  display: flex;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.dropzone-input > *:not(:last-child) {
+  margin-bottom: 0.625rem;
+}
+.dropzone-input > button {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 1.75rem;
+  color: var(--majax-text-secondary-color, #6c757d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dropzone-input > button > svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.dropzone-input .description {
+  font-size: 0.875rem;
+  color: var(--majax-text-secondary-color, #6c757d);
+}
+.dropzone-files-container {
+  margin-top: 0.5rem;
+  border-top: 1px solid var(--majax-border-color, #e0e0e0);
+}
+.dropzone-files-container > *:not(:last-child) {
+  border-bottom: 1px solid var(--majax-border-color, #e0e0e0);
+}
+.dropzone-files-container .dropzone-files {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.5rem;
+}
+.dropzone-files-container .dropzone-files svg {
+  width: 1rem;
+  height: 1rem;
+}
+.dropzone-files-container .dropzone-files .file-info {
+  flex: 1;
+}
+.dropzone-files-container .dropzone-files .file-info .title {
+  font-size: 0.875rem;
+}
+.dropzone-files-container .dropzone-files .file-info .description {
+  font-size: 0.75rem;
+  color: var(--majax-text-secondary-color, #6c757d);
+}
+.search-container {
+  position: relative;
+}
+.search-popup {
+  position: absolute;
+  left: 0;
+  top: 2.5rem;
+  width: 100%;
+}

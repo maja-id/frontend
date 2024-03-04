@@ -1,0 +1,67 @@
+button {
+  height: 2rem;
+  padding: 0 0.5rem;
+  font-size: .875rem;
+  font-family: var(--majax-font-family);
+  color: var(--majax-text-color);
+  font-weight: var(--majax-button-font-weight, 500);
+  border-radius: var(--majax-border-radius, 0.25rem);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin: 0;
+  background: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* border: 1px solid #f0f0f0; */
+  border: 1px solid var(--majax-border-color, #e0e0e0);
+  box-shadow: var(--majax-box-shadow, 0 1px 2px 0 rgba(122, 122, 122, 0.1));
+}
+button:hover, button:focus {
+  /* background-color: #f0f0f0; */
+  background-color: var(--majax-border-color, #e0e0e0);
+}
+button.primary {
+  background-color: var(--majax-button-primary-color, #007bff);
+  color: white;
+  border: 1px solid var(--majax-button-primary-color, #007bff);
+}
+button.primary:hover, button.primary:focus {
+  background-color: var(--majax-button-primary-color-focus, #005cb2);
+  border-color: var(--majax-button-primary-color-focus, #005cb2);
+}
+
+button.flat {
+  background-color: var(--majax-button-flat-color, #f0f0f0);
+}
+button.flat:hover, button.flat:focus {
+  background-color: var(--majax-button-flat-color-focus, #e0e0e0);
+  border: 1px solid var(--majax-button-flat-color-focus, #e0e0e0);
+}
+
+button.text {
+  border: 1px solid transparent;
+  padding: 0;
+}
+button.text:hover, button.text:focus {
+  background-color: transparent;
+}
+
+button.avatar {
+  background-color: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  border: none;
+  outline: none;
+  width: var(--majax-avatar-size, 1.75rem);
+  height: var(--majax-avatar-size, 1.75rem);
+  border-radius: calc(var(majax-avatar-size, 1.75rem) / 2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+}
+

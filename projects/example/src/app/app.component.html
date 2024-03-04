@@ -1,0 +1,24 @@
+<ui-layout>
+  <ui-sidebar>
+    Sidebar
+  </ui-sidebar>
+  <div class="content">
+    <ui-header>
+      <div class="app-header">
+        <div>
+          <button>
+            <ng-icon name="sidebar" size="1.2rem"></ng-icon>
+          </button>
+        </div>
+        <div class="space-x">
+          <input type="text" class="search-input" placeholder="search" />
+          <ui-button>Report</ui-button>
+          <ui-button data-type="primary">
+            Buat Tagihan
+          </ui-button>
+        </div>
+      </div>
+    </ui-header>
+    <router-outlet />
+  </div>
+</ui-layout>
