@@ -1,27 +1,83 @@
 # Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.2.
+Build library:
+```
+ng build @maja.id/<library> 
+```
+contoh:
+```
+ng build @maja.id/ui
+```
 
-## Development server
+Build and Watch
+```
+ng build @maja.id/ui --watch
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run Example project:
+```
+ng serve
+```
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### @maja.id/state
+Merupakan state management sederhana menggunakan Rxjs
+Contoh penggunaan:
+1. Buat State Model
+```
+export class Profile {
+  name: string;
+  email: string;
+  photo: string;
+}
 
-## Build
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. Buat State Class
+```
+import { State, StateOptions, StorageType } from '@maja.ui/state';
+import { Profile } from './profile';
 
-## Running unit tests
+export class ProfileState extends State<Profile> {
+  constructor() {
+    const options: StateOptions = {
+      key: 'PROFILE',
+      persist: true,
+      storageType: StorageType.LOCAL_STORAGE
+    };
+    super(new Profile(), options);
+  }
+}
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Menggunakan State
+```
+const profileState = inject(ProfileState);
 
-## Running end-to-end tests
+getProfile() {
+  return this.profileState.state;
+}
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+setProfile(profile: any) {
+  this.profileState.setState(profile);
+}
 
-## Further help
+profile?: any | undefined;
+subscribeProfileChanged() {
+  this.profileState.state$.subscribe((data: any) => {
+    this.profile = data;
+  });
+}
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+#### Konfigurasi
+1. key (string)
+digunakan sebagai key pada localStorage dan localstorage atau sebagai table pada IndexedDB
+2. persist (boolean)
+Simpan state di localStorage, sessionStorage atau IndexedDB
+3. storageType
+- StorageType.LOCAL_STORAGE : Browser localstorage
+- StorageType.SESSION_STORAGE : Browser Session Storage
+- StorageType.INDEXED_DB : IndexedDB
+
+
