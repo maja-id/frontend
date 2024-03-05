@@ -1,12 +1,12 @@
 @if (options.type == 'title') {
   <div>
-    <h1 class="form-title">{{ options.label }}</h1>
+    <h1 class="majax-form-input-title">{{ options.label }}</h1>
   </div>
 } @else {
-<div class="form-group">
+<div class="majax-form-input">
   @if (options.label) {
-    <div class="label-group">
-      <label class="input-label">
+    <div class="majax-form-input-label">
+      <label>
         {{ options.label}}
         @if (options.required) {
           <span class="text-danger">*</span>
@@ -21,11 +21,11 @@
       }
     </div>
   }
-  <div [ngStyle]="{ position: 'relative' }">
+  <div class="majax-form-input-container">
     @switch (options.type) {
       @case('date') {
         <!-- Date Picker Input -->
-        <div [ngStyle]="{ position: 'relative', width: 'auto', display: 'inline-block' }">
+        <div class="majax-form-input-date">
           <input
             [owlDateTime]="dt1"
             [value]="options.defaultValue || ''"
@@ -47,7 +47,7 @@
 
       @case('time') {
         <!-- Time picker Input -->
-        <div [ngStyle]="{ position: 'relative', width: 'auto', display: 'inline-block' }">
+        <div class="majax-form-input-date">
           <input
             [owlDateTime]="dt2"
             [value]="options.defaultValue || ''"
@@ -69,7 +69,7 @@
 
       @case('radio') {
         <!-- Radio Button-->
-        <div class="input-radio-wrapper">
+        <div class="majax-form-input-radio">
           @for (option of options.options; let i = $index; track option) {
           <div>
             <input
@@ -80,7 +80,7 @@
               [id]="options.name + '-' + i"
               (change)="_onChange($event)"
             />
-            <div class="input-radio-label">
+            <div class="majax-form-input-radio-label">
               <label [for]="options.name + '-' + i" class="label-text">
                 {{option.label}}
               </label>
@@ -98,7 +98,7 @@
 
       @case('checkbox') {
         <!-- Checkbox -->
-        <div class="input-checkbox-wrapper">
+        <div class="majax-form-input-checkbox">
           @for (option of options.options; let i = $index; track option) {
           <div>
             <input
@@ -109,7 +109,7 @@
               [id]="options.name + '-' + i"
               (change)="_onCheckboxChange($event)"
             />
-            <div class="input-radio-label">
+            <div class="majax-form-input-checkbox-label">
               <label [for]="options.name + '-' + i" class="label-text">
                 {{option.label}}
               </label>
@@ -161,7 +161,7 @@
         <!-- File upload -->
         <div>
           <ngx-dropzone [ngStyle]="{ width: '100%', height: '100%'}">
-            <div class="dropzone-container">
+            <div class="majax-form-input-dropzone">
               <div class="dropzone-input">
                 <input
                   type="file"
@@ -217,7 +217,7 @@
 
       @case('search') {
         <!-- Search -->
-        <div class="search-container">
+        <div class="majax-form-input-search">
           <input
             #searchInput
             [placeholder]="options.placeholder || ''"

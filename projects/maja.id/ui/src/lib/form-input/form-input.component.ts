@@ -12,7 +12,7 @@ import {
 } from '@angular/core';
 import { FormOptions } from '../form/form.options';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from '@danielmoncada/angular-datetime-picker';
-import { CommonModule, NgClass, NgIf, NgStyle } from '@angular/common';
+import { NgClass, NgIf, NgStyle } from '@angular/common';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { DropzoneCdkModule } from '@ngx-dropzone/cdk';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
