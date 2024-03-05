@@ -1,13 +1,66 @@
 <ui-layout>
   <ui-sidebar>
-    Sidebar
+    <div class="sidebar-header">
+      <img src="https://static.maja.id/icon-64.png" class="logo"/>
+      <h1>Company Name</h1>
+    </div>
+    <div style="margin: 0.5rem 0.75rem 0 0.75rem">
+      <ui-form [options]="searchFormOptions"></ui-form>
+    </div>
+    <ui-menu>
+      <div class="majax-menu-title">Tagihan</div>
+      <ul>
+        <li>
+          <a href="#">
+            <ng-icon class="icon" name="box" size="1rem"></ng-icon>
+            Buat Tagihan
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <ng-icon class="icon" name="folder" size="1rem"></ng-icon>
+            Data Tagihan
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <ng-icon class="icon" name="bell" size="1rem"></ng-icon>
+            Notifikasi
+          </a>
+        </li>
+      </ul>
+    </ui-menu>
+    <div class="divider"></div>
+    <ui-menu>
+      <div class="majax-menu-title">Transaksi</div>
+      <ul>
+        <li>
+          <a href="#">
+            <ng-icon class="icon" name="box" size="1rem"></ng-icon>
+            Buat Tagihan
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <ng-icon class="icon" name="folder" size="1rem"></ng-icon>
+            Data Tagihan
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <ng-icon class="icon" name="bell" size="1rem"></ng-icon>
+            Notifikasi
+          </a>
+        </li>
+      </ul>
+    </ui-menu>
   </ui-sidebar>
   <div class="content">
     <ui-header>
       <div class="app-header">
         <div>
           <button>
-            <ng-icon name="sidebar" size="1.2rem"></ng-icon>
+            <ng-icon name="sidebar" size="1rem"></ng-icon>
           </button>
         </div>
         <div class="space-x">

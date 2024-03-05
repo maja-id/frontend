@@ -47,12 +47,20 @@ ui-form-input select {
   line-height: 1.5;
   box-shadow: var(--majax-box-shadow);
   background: var(--majax-background-color, #fff);
+  max-width: 100%;
 }
 
-ui-form-input input.has-leading-icon {
-  padding-left: 2rem;
+ui-form-input .input-has-leading-icon,
+ui-form-input .input-has-trailing-icon {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
 }
-ui-form-input input.has-trailing-icon {
+ui-form-input .input-has-trailing-icon input {
+  padding-right: 2rem;
+}
+ui-form-input .input-has-leading-icon input {
   padding-left: 2rem;
 }
 
@@ -249,6 +257,11 @@ ui-form-input .trailing-icon {
   right: 0.5rem;
   top: 50%;
   transform: translateY(-50%);
+}
+ui-form-input .leading-icon > svg,
+ui-form-input .trailing-icon > svg{
+  width: 1rem;
+  height: 1rem;
 }
 ui-form-input .hint-container {
   font-size: 0.75rem;

@@ -32,3 +32,25 @@
   line-height: 1.5;
   box-shadow: var(--majax-box-shadow);
 }
+.sidebar-header {
+  height: 3rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+}
+.sidebar-header .logo {
+  width: 1.45rem;
+  height: 1.45rem;
+}
+.sidebar-header > h1 {
+  padding-left: 0.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #424242;
+  flex: 1;
+}
+.divider {
+  margin: 1rem 1rem 0 1rem;
+  height: 1px;
+  border-bottom: 1px solid var(--majax-border-color);
+}

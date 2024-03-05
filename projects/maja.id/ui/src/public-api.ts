@@ -13,3 +13,4 @@ export * from './lib/sidebar/sidebar.service';
 export * from './lib/form/form.component';
 export * from './lib/form-input/form-input.component';
 export * from './lib/form/form.options';
+export * from './lib/menu/menu.component';

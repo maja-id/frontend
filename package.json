@@ -24,6 +24,7 @@
     "@ng-select/ng-select": "^12.0.7",
     "@ngx-dropzone/cdk": "^17.2.0",
     "dexie": "^3.2.5",
+    "feather-icons": "^4.29.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
@@ -32,6 +33,7 @@
     "@angular-devkit/build-angular": "^17.2.2",
     "@angular/cli": "^17.2.2",
     "@angular/compiler-cli": "^17.2.0",
+    "@types/feather-icons": "^4.29.4",
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",

@@ -6,6 +6,7 @@ import {
   HostListener,
   Input,
   Output,
+  Renderer2,
   ViewChild,
   ViewEncapsulation,
   inject,
@@ -17,6 +18,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { DropzoneCdkModule } from '@ngx-dropzone/cdk';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AvatarComponent } from '../avatar/avatar.component';
+import feather, { FeatherIconNames } from 'feather-icons';
 
 @Component({
   selector: 'ui-form-input',
@@ -39,6 +41,7 @@ import { AvatarComponent } from '../avatar/avatar.component';
 })
 export class FormInputComponent {
   httpClient = inject(HttpClient);
+  renderer = inject(Renderer2);
   isError = false;
   searchFocused = false;
   _data: any = {};
@@ -46,6 +49,8 @@ export class FormInputComponent {
   textType = ['text', 'number', 'email', 'password'];
 
   @ViewChild('searchInput') searchRef?: ElementRef;
+  @ViewChild('leadingIcon') leadingIconRef?: ElementRef;
+  @ViewChild('trailingIcon') trailingIconRef?: ElementRef;
 
   @HostListener('document:click', ['$event'])
   clickout(event: any) {
@@ -86,6 +91,20 @@ export class FormInputComponent {
     }
     this.changed.emit(this._data);
     this._validate();
+
+  }
+
+  ngAfterViewInit() {
+    if (this.options.leadingIcon) {
+      const icon: any = feather.icons[this.options.leadingIcon as FeatherIconNames].toSvg();
+      console.log(icon);
+      console.log(this.leadingIconRef);
+      this.renderer.setProperty(this.leadingIconRef?.nativeElement, 'innerHTML', icon);
+    }
+    if (this.options.trailingIcon) {
+      const icon: any = feather.icons[this.options.trailingIcon as FeatherIconNames].toSvg();
+      this.renderer.setProperty(this.trailingIconRef?.nativeElement, 'innerHTML', icon);
+    }
   }
 
   @Input()
@@ -203,6 +222,17 @@ export class FormInputComponent {
             : [];
         });
     }
+  }
+
+  get containerClass() {
+    let additionalClass = '';
+    if (this.options.leadingIcon) {
+      additionalClass = 'input-has-leading-icon ';
+    }
+    if (this.options.trailingIcon) {
+      additionalClass = 'input-has-trailing-icon ';
+    }
+    return additionalClass;
   }
 
   selectedSearchResult: any[] = [];
