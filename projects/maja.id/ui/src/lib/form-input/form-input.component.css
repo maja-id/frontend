@@ -48,6 +48,13 @@ ui-form-input input, ui-form-input select {
   background: var(--majax-background-color, #fff);
 }
 
+ui-form-input input.has-leading-icon {
+  padding-left: 2rem;
+}
+ui-form-input input.has-trailing-icon {
+  padding-left: 2rem;
+}
+
 ui-form-input .input-error {
   border-color: var(--majax-text-danger-color, #dc3545);
   box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
@@ -216,10 +223,14 @@ ui-form-input .leading-icon {
   position: absolute;
   left: 0.5rem;
   top: 50%;
+  width: 1rem;
+  height: 1rem;
   transform: translateY(-50%);
 }
 ui-form-input .trailing-icon {
   position: absolute;
+  width: 1rem;
+  height: 1rem;
   right: 0.5rem;
   top: 50%;
   transform: translateY(-50%);
