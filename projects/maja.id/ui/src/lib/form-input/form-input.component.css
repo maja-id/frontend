@@ -8,7 +8,7 @@ ui-form-input .form-title {
 }
 
 ui-form-input .form-group > *:not(:last-child) {
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 ui-form-input .label-group {
@@ -24,7 +24,6 @@ ui-form-input .input-label {
   display: block;
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--majax-text-secondary-color, #6c757d);
 }
 ui-form-input .text-danger {
   color: var(--majax-text-danger-color, #dc3545);
