@@ -1,39 +1,43 @@
-.form-title {
+@import "@danielmoncada/angular-datetime-picker/assets/style/picker.min.css";
+.owl-dt-container {
+  border-radius: var(--majax-border-radius, 0.25rem);
+}
+ui-form-input .form-title {
   font-weight: 500;
   font-size: 1.25rem;
 }
 
-.form-group > *:not(:last-child) {
+ui-form-input .form-group > *:not(:last-child) {
   margin-bottom: 1rem;
 }
 
-.input-group {
+ui-form-input .label-group {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.input-group > *:not(:last-child) {
+ui-form-input .label-group > *:not(:last-child) {
   margin-right: 1rem;
 }
 
-.input-label {
+ui-form-input .input-label {
   display: block;
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--majax-text-secondary-color, #6c757d);
 }
-.text-danger {
+ui-form-input .text-danger {
   color: var(--majax-text-danger-color, #dc3545);
 }
-.input-group > button {
+ui-form-input .input-group > button {
   font-size: 0.875rem;
   padding-bottom: 0.25rem;
 }
-.input-group > button > svg {
+ui-form-input .input-group > button > svg {
   width: 0.875rem;
   height: 0.875rem;
 }
-input {
+ui-form-input input, ui-form-input select {
   border: 1px solid var(--majax-border-color);
   border-radius: var(--majax-border-radius);
   outline: none;
@@ -41,55 +45,56 @@ input {
   font-size: 0.875rem;
   line-height: 1.5;
   box-shadow: var(--majax-box-shadow);
+  background: var(--majax-background-color, #fff);
 }
 
-.input-error {
+ui-form-input .input-error {
   border-color: var(--majax-text-danger-color, #dc3545);
   box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
 }
-.input-checkbox-wrapper,
-.input-radio-wrapper {
+ui-form-input .input-checkbox-wrapper,
+ui-form-input .input-radio-wrapper {
   padding-top: 0.25rem;
 }
-.input-checkbox-wrapper > *:not(:last-child),
-.input-radio-wrapper > *:not(:last-child) {
+ui-form-input .input-checkbox-wrapper > *:not(:last-child),
+ui-form-input .input-radio-wrapper > *:not(:last-child) {
   margin-bottom: 0.625rem;
 }
-.input-checkbox-wrapper > div,
-.input-radio-wrapper > div {
+ui-form-input .input-checkbox-wrapper > div,
+ui-form-input .input-radio-wrapper > div {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
 }
-.input-checkbox-wrapper > div > *:not(:last-child),
-.input-radio-wrapper > div > *:not(:last-child) {
+ui-form-input .input-checkbox-wrapper > div > *:not(:last-child),
+ui-form-input .input-radio-wrapper > div > *:not(:last-child) {
   margin-right: 0.25rem;
 }
 
-input[type=checkbox],
-input[type=radio] {
+ui-form-input input[type=checkbox],
+ui-form-input input[type=radio] {
   width: 1rem;
   height: 1rem;
   border-radius: 0.25rem;
 }
-.input-radio-label {
+ui-form-input .input-radio-label {
   display: flex;
   flex-direction: row;
   margin-top: -0.25rem;
 }
-.input-radio-label .label-text {
+ui-form-input .input-radio-label .label-text {
   cursor: pointer;
 }
-.input-radion-label .label-description {
+ui-form-input .input-radion-label .label-description {
   font-size: 0.75rem;
   color: var(--majax-text-secondary-color, #6c757d);
 }
-.dropzone-container {
+ui-form-input .dropzone-container {
   width: 100%;
   border-radius: var(--majax-border-radius, 0.25rem);
   border: 1px solid var(--majax-border-color, #e0e0e0);
 }
-.dropzone-input {
+ui-form-input .dropzone-input {
   display: flex;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -97,10 +102,10 @@ input[type=radio] {
   align-items: center;
   justify-content: center;
 }
-.dropzone-input > *:not(:last-child) {
+ui-form-input .dropzone-input > *:not(:last-child) {
   margin-bottom: 0.625rem;
 }
-.dropzone-input > button {
+ui-form-input .dropzone-input > button {
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 1.75rem;
@@ -109,47 +114,165 @@ input[type=radio] {
   align-items: center;
   justify-content: center;
 }
-.dropzone-input > button > svg {
+ui-form-input .dropzone-input > button > svg {
   width: 1.5rem;
   height: 1.5rem;
 }
-.dropzone-input .description {
+ui-form-input .dropzone-input .description {
   font-size: 0.875rem;
   color: var(--majax-text-secondary-color, #6c757d);
 }
-.dropzone-files-container {
+ui-form-input .dropzone-files-container {
   margin-top: 0.5rem;
   border-top: 1px solid var(--majax-border-color, #e0e0e0);
 }
-.dropzone-files-container > *:not(:last-child) {
+ui-form-input .dropzone-files-container > *:not(:last-child) {
   border-bottom: 1px solid var(--majax-border-color, #e0e0e0);
 }
-.dropzone-files-container .dropzone-files {
+ui-form-input .dropzone-files-container .dropzone-files {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 0.5rem;
 }
-.dropzone-files-container .dropzone-files svg {
+ui-form-input .dropzone-files-container .dropzone-files svg {
   width: 1rem;
   height: 1rem;
 }
-.dropzone-files-container .dropzone-files .file-info {
+ui-form-input .dropzone-files-container .dropzone-files .file-info {
   flex: 1;
 }
-.dropzone-files-container .dropzone-files .file-info .title {
+ui-form-input .dropzone-files-container .dropzone-files .file-info .title {
   font-size: 0.875rem;
 }
-.dropzone-files-container .dropzone-files .file-info .description {
+ui-form-input .dropzone-files-container .dropzone-files .file-info .description {
   font-size: 0.75rem;
   color: var(--majax-text-secondary-color, #6c757d);
 }
-.search-container {
+ui-form-input .search-container {
   position: relative;
 }
-.search-popup {
+ui-form-input .search-popup {
   position: absolute;
+  font-size: 0.875rem;
   left: 0;
-  top: 2.5rem;
-  width: 100%;
+  top: 2rem;
+  width: auto;
+  background: var(--majax-background-color, #fff);
+  border: 1px solid var(--majax-border-color, #e0e0e0);
+  border-radius: var(--majax-border-radius, 0.25rem);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+  z-index: 50;
+}
+ui-form-input .search-popup-header {
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: var(--majax-text-secondary-color, #6c757d);
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--majax-border-color, #e0e0e0);
+}
+ui-form-input .search-popup-empty {
+  padding: 5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+ui-form-input .search-popup-empty svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.5rem;
+}
+
+ui-form-input .search-results {
+  display: flex;
+  flex-direction: column;
+  max-height: 20rem;
+  overflow-y: auto;
+}
+
+ui-form-input .search-results > *:not(:last-child) {
+  border-bottom: 1px solid var(--majax-border-color, #e0e0e0);
+}
+ui-form-input .search-results-item {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+ui-form-input .search-results-item:hover {
+  background-color: #f8f9fa;
+}
+ui-form-input .search-results-item > *:not(:last-child) {
+  margin-right: 0.5rem;
+}
+ui-form-input .search-results-item .description {
+  font-size: 0.75rem;
+  color: var(--majax-text-secondary-color, #6c757d);
+}
+ui-form-input .leading-icon {
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+ui-form-input .trailing-icon {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+ui-form-input .hint-container {
+  font-size: 0.75rem;
+  color: var(--majax-text-secondary-color, #6c757d);
+  margin-top: -0.5rem;
+}
+ui-form-input .error-container {
+  font-size: 0.75rem;
+  margin-top: -0.5rem;
+  color: var(--majax-text-danger-color, #dc3545);
+}
+ui-form-input .selected-search {
+  margin-top: 0.25rem;
+  border: 1px solid var(--majax-border-color, #e0e0e0);
+  border-radius: var(--majax-border-radius, 0.25rem);
+}
+ui-form-input .selected-search .title {
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-bottom: 1px solid var(--majax-border-color, #e0e0e0);
+}
+ui-form-input .selected-search .items > *:not(:last-child) {
+  border-bottom: 1px solid var(--majax-border-color, #e0e0e0);
+}
+ui-form-input .no-item-selected {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  color: var(--majax-text-secondary-color, #6c757d);
+}
+ui-form-input .selected-search .selected-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+ui-form-input .selected-search .selected-item > *:not(:last-child) {
+  margin-right: 0.5rem;
+}
+ui-form-input .selected-search .selected-item-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+ui-form-input .selected-search .selected-item-info .title {
+  font-size: 0.875rem;
+  border: none;
+  padding: 0;
+}
+ui-form-input .selected-search .selected-item-info .description {
+  font-size: 0.75rem;
+  color: var(--majax-text-secondary-color, #6c757d);
 }

@@ -7,32 +7,35 @@ import {
   Input,
   Output,
   ViewChild,
+  ViewEncapsulation,
   inject,
 } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormOptions } from '../form/form.options';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from '@danielmoncada/angular-datetime-picker';
-import { NgClass } from '@angular/common';
-import { NgSelectComponent } from '@ng-select/ng-select';
-import { NgSelectOption } from '@angular/forms';
-import { DropzoneComponent } from '@ngx-dropzone/cdk';
+import { CommonModule, NgClass, NgIf, NgStyle } from '@angular/common';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { DropzoneCdkModule } from '@ngx-dropzone/cdk';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AvatarComponent } from '../avatar/avatar.component';
 
 @Component({
   selector: 'ui-form-input',
   templateUrl: './form-input.component.html',
-  styleUrls: ['./form-input.component.scss'],
+  styleUrls: ['./form-input.component.css'],
   imports: [
     NgClass,
-    BrowserModule,
-    BrowserAnimationsModule,
+    NgStyle,
+    NgIf,
+    FormsModule,
+    ReactiveFormsModule,
     OwlDateTimeModule,
     OwlNativeDateTimeModule,
-    NgSelectComponent,
-    NgSelectOption,
-    DropzoneComponent,
+    NgSelectModule,
+    DropzoneCdkModule,
+    AvatarComponent,
   ],
   standalone: true,
+  encapsulation: ViewEncapsulation.None
 })
 export class FormInputComponent {
   httpClient = inject(HttpClient);
@@ -181,8 +184,9 @@ export class FormInputComponent {
       this.httpClient
         .request(method, api.url, { params })
         .subscribe((res: any) => {
-          this.searchResults = res.data
-            ? res.data
+          const data = res.data || res;
+          this.searchResults = data
+            ? data
                 .filter((item: any) => item.active !== null) // Always ignore inactive items
                 .map((item: any) => ({
                   label: api.labelField
@@ -194,6 +198,7 @@ export class FormInputComponent {
                   description: api.descriptionField
                     ? item[api.descriptionField]
                     : '',
+                  icon: api.iconField ? item[api.iconField] : '',
                 }))
             : [];
         });

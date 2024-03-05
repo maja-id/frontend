@@ -1,1 +1,15 @@
-
+<form class="form-container">
+  @for (field of options; track field) {
+    <div>
+      @if (field.type == 'group') {
+        <div [ngStyle]="getGridStyle(field)">
+          @for (child of field.childrens; track child) {
+            <ui-form-input (changed)="_onInputChange($event)" [options]="child"></ui-form-input>
+          }
+        </div>
+      } @else {
+        <ui-form-input (changed)="_onInputChange($event)" [options]="field"></ui-form-input>
+      }
+    </div>
+  }
+</form>

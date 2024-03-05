@@ -19,6 +19,9 @@
         </div>
       </div>
     </ui-header>
+    <div style="padding: 20px;">
+      <ui-form [options]="formOptions" (changed)="onChanged($event)"></ui-form>
+    </div>
     <router-outlet />
   </div>
 </ui-layout>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'lib-popover',
@@ -8,5 +8,4 @@ import { Component } from '@angular/core';
   styleUrl: './popover.component.css'
 })
 export class PopoverComponent {
-
 }

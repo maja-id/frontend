@@ -41,5 +41,6 @@ export interface FormOptions {
     valueField?: string;
     additionalValueField?: string;
     leadingIcon?: string;
+    iconField?: string;
   };
 }

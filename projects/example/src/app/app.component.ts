@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LayoutComponent, SidebarComponent, FooterComponent, HeaderComponent, AvatarComponent, ButtonComponent, DropdownComponent } from '@maja.id/ui';
+import { LayoutComponent, FormComponent, SidebarComponent, FooterComponent, HeaderComponent, AvatarComponent, ButtonComponent, DropdownComponent, FormOptions } from '@maja.id/ui';
 import { NgIconComponent } from '@ng-icons/core';
 
 @Component({
@@ -16,10 +16,35 @@ import { NgIconComponent } from '@ng-icons/core';
     AvatarComponent,
     ButtonComponent,
     DropdownComponent,
+    FormComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'example';
+  formOptions: FormOptions[] = [
+    {
+      label: 'Username',
+      name: 'tes',
+      type: 'search',
+      hint: 'Search for user',
+      api: {
+        url: 'https://api.github.com/users',
+        valueField: 'id',
+        labelField: 'login',
+        descriptionField: 'type',
+        iconField: 'avatar_url',
+        searchKey: 'userame',
+      }
+    },
+    {
+      label: 'Tanggal lahir',
+      name: 'date',
+      type: 'date',
+    }
+  ];
+  onChanged = (event: any) => {
+    console.debug(event);
+  }
 }

@@ -12,7 +12,6 @@
     "@danielmoncada/angular-datetime-picker": "^17.0.0",
     "@ng-select/ng-select": "^12.0.7",
     "@ngx-dropzone/cdk": "^17.2.0",
-    "tippy.js": "^6.3.7",
     "@maja.id/state": "^5.0.0"
   },
   "dependencies": {

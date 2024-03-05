@@ -10,3 +10,6 @@ export * from './lib/header/header.component';
 export * from './lib/layout/layout.component';
 export * from './lib/sidebar/sidebar.component';
 export * from './lib/sidebar/sidebar.service';
+export * from './lib/form/form.component';
+export * from './lib/form-input/form-input.component';
+export * from './lib/form/form.options';

@@ -5,7 +5,7 @@
 } @else {
 <div class="form-group">
   @if (options.label) {
-    <div class="input-group">
+    <div class="label-group">
       <label class="input-label">
         {{ options.label}}
         @if (options.required) {
@@ -120,7 +120,7 @@
         <textarea
           [placeholder]="options.placeholder || ''"
           [ngClass]="isError ? 'input-error' : 'input-default'"
-          [class]="options.className"
+          [class]="options.className || ''"
           [rows]="options.rows || 3"
           (keyup)="_onChange($event)"
           >
@@ -215,41 +215,43 @@
             (keyup)="_onSearch($event)"
           />
           <div class="search-popup" [hidden]="!searchFocused">
-            <div
-              class="bg-slate-100 rounded-t text-gray-600 text-sm font-bold px-4 py-3 border-b border-slate-200">
+            <div class="search-popup-header">
               Search Results:
             </div>
-            <div class="max-h-80 overflow-x-hidden">
+            <div class="search-popup-content">
               @if (searchResults.length === 0) {
-                <div class="w-full text-center py-8 text-gray-500 text-sm">
+                <div class="search-popup-empty">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+                  </svg>
                   No record found!
                 </div>
               }
-              <div class="divide-y divide-slate-100">
+              <div class="search-results">
                 @for (result of searchResults; let i = $index; track result) {
                   <a
                     (click)="_onSelectSearchResult(result); searchFocused = false"
                     (keyup)="_onSelectSearchResult(result); searchFocused = false"
                     tabindex="0"
-                    class="flex flex-row gap-3 items-center py-2 px-4 cursor-pointer hover:bg-slate-50"
-                  >
-                    <i class="icon text-gray-600 text-xl">{{
-                      options.api?.leadingIcon || "note"
-                    }}</i>
-                    <div class="flex-1 flex flex-col w-full overflow-hidden">
+                    class="search-results-item">
+
+                    @if (result.icon) {
+                      <ui-avatar [src]="result.icon"></ui-avatar>
+                    }
+                    <div class="search-results-item-info">
                       <div
-                        class="text-sm font-medium truncate"
+                        class="title"
                         title="{{ result.label }}"
                       >
                         {{ result.label }}
                       </div>
-                      <div
-                        *ngIf="result.description"
-                        class="truncate text-xs text-gray-500"
-                        title="{{ result.description }}"
-                      >
-                        {{ result.description }}
-                      </div>
+                      @if (result.description) {
+                        <div
+                          class="description"
+                          title="{{ result.description }}">
+                          {{ result.description }}
+                        </div>
+                      }
                     </div>
                   </a>
                 }
@@ -289,65 +291,66 @@
       >{{ options.trailingIcon }}</i
     >
   </div>
-  <p *ngIf="options.hint && !isError" class="block text-xs text-gray-500">
-    {{ options.hint }}
-  </p>
-  <p *ngIf="isError" class="block text-xs text-danger">{{ errorText }}</p>
-  <!-- Selected search result -->
-  <div *ngIf="options.type === 'search'" class="selected-search pt-2 w-full">
-    <div class="rounded-lg border">
-      <div
-        class="border-b px-4 py-2 text-sm font-medium bg-slate-100 rounded-t-lg"
-      >
-        ({{ selectedSearchResult.length || 0 }}) Selected
-      </div>
-      <div class="divide-y divide-slate-100">
-        <div
-          *ngIf="selectedSearchResult.length === 0"
-          class="py-4 flex items-center text-gray-400 justify-center"
-        >
-          <span>No record selected</span>
+  @if (options.hint && !isError) {
+    <p class="hint-container">{{ options.hint }}</p>
+  }
+  @if (isError) {
+    <p class="error-container">{{ errorText }}</p>
+  }
+
+  @if (options.type === 'search') {
+    <!-- Selected search result -->
+    <div class="selected-search">
+      <div class="selected-search-content">
+        <div class="title">
+          ({{ selectedSearchResult.length || 0 }}) Selected
         </div>
-        <div
-          *ngFor="let result of selectedSearchResult; let i = index"
-          class="flex flex-row gap-3 items-center py-2 px-4"
-        >
-          <i class="icon text-gray-500 text-xl mt-0.5">{{
-            options.api?.leadingIcon || "note"
-          }}</i>
-          <div class="flex-1 flex flex-col w-full overflow-hidden">
-            <div class="text-sm font-medium truncate">{{ result.label }}</div>
-            <div
-              *ngIf="result.description"
-              class="truncate text-xs text-gray-500"
-            >
-              {{ result.description }}
+        <div class="items">
+          @if (selectedSearchResult.length === 0) {
+            <div class="no-item-selected">
+              <span>No record selected</span>
             </div>
-          </div>
-          <div
-            *ngIf="options.enableRoleInSearchResult"
-            class="w-full max-w-[65px]"
-          >
-            <select
-              [(ngModel)]="_data[options.name][i].role"
-              (change)="_onRoleChange($event, i)"
-              class="border border-slate-200 text-sm rounded-lg py-1.5 focus:ring-primary w-full px-3"
-            >
-              <option *ngFor="let role of roles" [value]="role.value">
-                {{ role.label }}
-              </option>
-            </select>
-          </div>
-          <button
-            (click)="_onRemoveSearchResult(i)"
-            class="text-gray-500 text-xl"
-          >
-            <i class="icon">close</i>
-          </button>
+          }
+
+          @for (result of selectedSearchResult; let i = $index; track result) {
+            <div class="selected-item">
+              @if (result.icon) {
+                <ui-avatar [src]="result.icon"></ui-avatar>
+              }
+              <div class="selected-item-info">
+                <div class="title">{{ result.label }}</div>
+                @if (result.description) {
+                  <div class="description">
+                    {{ result.description }}
+                  </div>
+                }
+              </div>
+
+              @if (options.enableRoleInSearchResult) {
+                <div style="width: 70px; margin-right: 1rem;">
+                  <select
+                    [(ngModel)]="_data[options.name][i].role"
+                    (change)="_onRoleChange($event, i)">
+                    @for (role of roles; track role) {
+                    <option [value]="role.value">
+                      {{ role.label }}
+                    </option>
+                    }
+                  </select>
+                </div>
+              }
+
+              <button (click)="_onRemoveSearchResult(i)">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" [ngStyle]="{ width: '1rem', height: '1rem'}">
+                  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+                </svg>
+              </button>
+            </div>
+          }
         </div>
       </div>
+      <!-- End of Selected search results -->
     </div>
-    <!-- End of Selected search results -->
-  </div>
+  }
 </div>
 }
