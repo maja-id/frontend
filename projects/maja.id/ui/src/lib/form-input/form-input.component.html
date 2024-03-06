@@ -31,7 +31,6 @@
             [value]="options.defaultValue || ''"
             [owlDateTimeTrigger]="dt1"
             [ngClass]="isError ? 'input-error' : 'input-default'"
-            [class]="options.className || ''"
             (dateTimeChange)="_onDateTimeChange($event)"
             [placeholder]="options.placeholder || ''"
           />
@@ -48,7 +47,6 @@
             [value]="options.defaultValue || ''"
             [owlDateTimeTrigger]="dt2"
             [ngClass]="isError ? 'input-error' : 'input-default'"
-            [class]="options.className || ''"
             (dateTimeChange)="_onDateTimeChange($event)"
             [placeholder]="options.placeholder || ''"
           />
@@ -211,7 +209,6 @@
           <input
             #searchInput
             [placeholder]="options.placeholder || ''"
-            [class]="options.className"
             (keyup)="_onSearch($event)"
           />
           <div class="search-popup" [hidden]="!searchFocused">
@@ -271,7 +268,6 @@
             [type]="options.type"
             [placeholder]="options.placeholder || ''"
             [ngClass]="isError ? 'input-error' : 'input-default'"
-            [class]="options.className || ''"
             [min]="options.min"
             [max]="options.max"
             (keyup)="_onChange($event)"
@@ -300,7 +296,30 @@
     <p class="error-container">{{ errorText }}</p>
   }
 
-  @if (options.type === 'search') {
+  @if (options.type === 'search' && !options.enableRoleInSearchResult) {
+    <!-- Selected items -->
+    <div class="majax-form-input-chips">
+      @for (result of selectedSearchResult; let i = $index; track result) {
+        <ui-chip
+          [leadingIcon]="result.icon"
+          [trailingIcon]="chipTrailingIconTemplate"
+          [title]="result.label">
+        </ui-chip>
+        <ng-template #chipTrailingIconTemplate>
+          <button (click)="_onRemoveSearchResult(i)" style="padding: 0.25rem 0.5rem 0.25rem 0.25rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </ng-template>
+      }
+    </div>
+    @if (selectedSearchResult.length > 0) {
+      <p class="majax-selected-chips-count">{{selectedSearchResult.length}} record(s) selected</p>
+    }
+  }
+
+  @if (options.type === 'search' && options.enableRoleInSearchResult) {
     <!-- Selected search result -->
     <div class="selected-search">
       <div class="selected-search-content">

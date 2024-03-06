@@ -12,3 +12,6 @@ ng-icon > svg {
   width: var(--ng-icon__size, 1rem);
   height: var(--ng-icon__size, 1rem);
 }
+.w-50 {
+  width: 50%;
+}

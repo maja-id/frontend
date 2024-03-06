@@ -36,9 +36,10 @@ export class AppComponent {
     {
       label: 'Username',
       name: 'tes',
+      className: 'w-50',
       type: 'search',
-      hint: 'Search for user',
-        trailingIcon: 'search',
+      placeholder: 'Find user by username',
+      trailingIcon: 'search',
       api: {
         url: 'https://api.github.com/users',
         valueField: 'id',
@@ -50,6 +51,7 @@ export class AppComponent {
     },
     {
       label: 'Tanggal lahir',
+      trailingIcon: 'calendar',
       name: 'date',
       type: 'date',
     }

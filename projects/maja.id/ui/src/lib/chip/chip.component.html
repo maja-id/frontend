@@ -1,0 +1,8 @@
+<button class="majax-chip" (click)="onClicked($event)">
+  <div class="majax-chip-leading-icon" [hidden]="!leadingIcon" #chipLeadingIcon></div>
+  <div class="majax-chip-content">
+    <div class="majax-chip-content-title">{{ title }}</div>
+    <div class="majax-chip-content-subtitle" [hidden]="!subtitle">{{ subtitle }}</div>
+  </div>
+  <div class="majax-chip-trailing-icon" [hidden]="!trailingIcon" #chipTrailingIcon></div>
+</button>

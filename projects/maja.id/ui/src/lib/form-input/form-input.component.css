@@ -48,13 +48,12 @@ ui-form-input select {
   box-shadow: var(--majax-box-shadow);
   background: var(--majax-background-color, #fff);
   max-width: 100%;
+  width: 100%;
 }
 
 ui-form-input .input-has-leading-icon,
 ui-form-input .input-has-trailing-icon {
   position: relative;
-  display: inline-block;
-  width: auto;
   max-width: 100%;
 }
 ui-form-input .input-has-trailing-icon input {
@@ -75,8 +74,6 @@ ui-form-input .majax-form-input-container {
 
 ui-form-input .majax-form-input-date {
   position: relative;
-  width: auto;
-  display: inline-block;
 }
 
 ui-form-input .majax-form-input-checkbox,
@@ -262,6 +259,7 @@ ui-form-input .leading-icon > svg,
 ui-form-input .trailing-icon > svg{
   width: 1rem;
   height: 1rem;
+  color: var(--majax-text-secondary-color, #6c757d);
 }
 ui-form-input .hint-container {
   font-size: 0.75rem;
@@ -314,4 +312,20 @@ ui-form-input .selected-search .selected-item-info .title {
 ui-form-input .selected-search .selected-item-info .description {
   font-size: 0.75rem;
   color: var(--majax-text-secondary-color, #6c757d);
+}
+ui-form-input .majax-form-input-chips {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 0.25rem;
+}
+ui-form-input .majax-form-input-chips > *:not(:last-child) {
+  margin-right: 0.25rem;
+}
+ui-form-input .majax-selected-chips-count {
+  font-size: 0.75rem;
+  color: var(--majax-text-secondary-color, #6c757d);
+  margin-top: -0.25rem;
+  font-style: italic;
 }

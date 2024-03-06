@@ -19,6 +19,7 @@ import { DropzoneCdkModule } from '@ngx-dropzone/cdk';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AvatarComponent } from '../avatar/avatar.component';
 import feather, { FeatherIconNames } from 'feather-icons';
+import { ChipComponent } from '../chip/chip.component';
 
 @Component({
   selector: 'ui-form-input',
@@ -35,6 +36,7 @@ import feather, { FeatherIconNames } from 'feather-icons';
     NgSelectModule,
     DropzoneCdkModule,
     AvatarComponent,
+    ChipComponent,
   ],
   standalone: true,
   encapsulation: ViewEncapsulation.None
@@ -97,8 +99,6 @@ export class FormInputComponent {
   ngAfterViewInit() {
     if (this.options.leadingIcon) {
       const icon: any = feather.icons[this.options.leadingIcon as FeatherIconNames].toSvg();
-      console.log(icon);
-      console.log(this.leadingIconRef);
       this.renderer.setProperty(this.leadingIconRef?.nativeElement, 'innerHTML', icon);
     }
     if (this.options.trailingIcon) {
@@ -225,12 +225,12 @@ export class FormInputComponent {
   }
 
   get containerClass() {
-    let additionalClass = '';
+    let additionalClass = this.options.className;
     if (this.options.leadingIcon) {
-      additionalClass = 'input-has-leading-icon ';
+      additionalClass += ' input-has-leading-icon ';
     }
     if (this.options.trailingIcon) {
-      additionalClass = 'input-has-trailing-icon ';
+      additionalClass += ' input-has-trailing-icon ';
     }
     return additionalClass;
   }
