@@ -51,7 +51,7 @@
   justify-content: center;
 }
 .majax-chip .majax-chip-content .majax-chip-content-title {
-  font-size: var(--majax-font-size-xs, 0.75rem);
+  font-size: var(--majax-text-size-xs, 0.75rem);
   padding: 0 0.25rem;
   line-height: 1;
   display: inline-block;
@@ -61,10 +61,10 @@
   white-space: nowrap;
 }
 .majax-chip .majax-chip-content .majax-chip-content-subtitle {
-  font-size: var(--majax-font-size-xs, 0.75rem);
+  font-size: var(--majax-text-size-xs, 0.75rem);
   padding: 0 0.25rem;
   line-height: 1;
-  color: var(--majax-text-secondary-color, #6c757d);
+  color: var(--majax-secondary-text-color, #6c757d);
   display: inline-block;
   padding-top: 0.15rem;
   max-width: 100%;

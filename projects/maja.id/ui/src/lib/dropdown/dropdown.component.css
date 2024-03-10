@@ -22,7 +22,7 @@
   min-width: 10rem;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
   z-index: 100;
-  border: 1px solid var(--majax-dropdown-border-color, #e0e0e0);
+  border: 1px solid var(--majax-border-color, #e0e0e0);
   border-radius: var(--majax-border-radius, 0.25rem);
   margin-top: 4px;
 }

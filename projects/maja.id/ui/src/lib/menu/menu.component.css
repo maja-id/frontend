@@ -24,15 +24,15 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.05s;
   color: var(--majax-text-color, #242424);
   text-decoration: none;
-  font-size: var(--majax-font-size-sm, 0.875rem);
+  font-size: var(--majax-text-size-sm, 0.875rem);
 }
 .majax-menu-component li > a.active,
 .majax-menu-component li > a:focus,
 .majax-menu-component li > a:hover {
-  background-color: var(--majax-hover-color, #ececec);
+  background-color: var(--majax-text-color-focused, #ececec);
   /* border-radius: var(--majax-border-radius, 0.25rem); */
 }
 .majax-menu-component li > a > .icon {
@@ -47,10 +47,10 @@
 }
 
 .majax-menu-component > .majax-menu-title {
-  font-size: var(--majax-font-size-xs, 0.825rem);
+  font-size: var(--majax-text-size-xs, 0.825rem);
   font-weight: 400;
   padding: 1rem 1rem 0.5rem 1rem;
-  color: var(--majax-text-secondary-color, #6c757d);
+  color: var(--majax-secondary-text-color, #6c757d);
 }
 .majax-sidebar .majax-menu-component li > a {
   height: 2.25rem;

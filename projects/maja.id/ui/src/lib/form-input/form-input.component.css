@@ -26,7 +26,7 @@ ui-form-input .majax-form-input-label > label {
   font-weight: 500;
 }
 ui-form-input .text-danger {
-  color: var(--majax-text-danger-color, #dc3545);
+  color: var(--majax-danger-color, #dc3545);
 }
 ui-form-input .majax-form-input-label > button {
   font-size: 0.875rem;
@@ -64,7 +64,7 @@ ui-form-input .input-has-leading-icon input {
 }
 
 ui-form-input .input-error {
-  border-color: var(--majax-text-danger-color, #dc3545);
+  border-color: var(--majax-danger-color, #dc3545);
   box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
 }
 
@@ -114,7 +114,7 @@ ui-form-input .majax-form-input-checkbox-label .label-text {
 ui-form-input .majax-form-input-radio-label .label-description,
 ui-form-input .majax-form-input-checkbox-label .label-description {
   font-size: 0.75rem;
-  color: var(--majax-text-secondary-color, #6c757d);
+  color: var(--majax-secondary-text-color, #6c757d);
 }
 ui-form-input .majax-form-input-dropzone {
   width: 100%;
@@ -136,7 +136,7 @@ ui-form-input .majax-form-input-dropzone > .dropzone-input > button {
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 1.75rem;
-  color: var(--majax-text-secondary-color, #6c757d);
+  color: var(--majax-secondary-text-color, #6c757d);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -147,7 +147,7 @@ ui-form-input .majax-form-input-dropzone > .dropzone-input > button > svg {
 }
 ui-form-input .majax-form-input-dropzone > .dropzone-input .description {
   font-size: 0.875rem;
-  color: var(--majax-text-secondary-color, #6c757d);
+  color: var(--majax-secondary-text-color, #6c757d);
 }
 ui-form-input .majax-form-input-dropzone > .dropzone-files-container {
   margin-top: 0.5rem;
@@ -174,7 +174,7 @@ ui-form-input .majax-form-input-dropzone > .dropzone-files-container .dropzone-f
 }
 ui-form-input .majax-form-input-dropzone > .dropzone-files-container .dropzone-files .file-info .description {
   font-size: 0.75rem;
-  color: var(--majax-text-secondary-color, #6c757d);
+  color: var(--majax-secondary-text-color, #6c757d);
 }
 ui-form-input .majax-form-input-search {
   position: relative;
@@ -194,7 +194,7 @@ ui-form-input .majax-form-input-search > .search-popup {
 ui-form-input .majax-form-input-search > .search-popup > .search-popup-header {
   font-weight: 500;
   font-size: 0.75rem;
-  color: var(--majax-text-secondary-color, #6c757d);
+  color: var(--majax-secondary-text-color, #6c757d);
   padding: 0.5rem 1rem;
   border-bottom: 1px solid var(--majax-border-color, #e0e0e0);
 }
@@ -237,7 +237,7 @@ ui-form-input .majax-form-input-search .search-results-item > *:not(:last-child)
 }
 ui-form-input .majax-form-input-search .search-results-item .description {
   font-size: 0.75rem;
-  color: var(--majax-text-secondary-color, #6c757d);
+  color: var(--majax-secondary-text-color, #6c757d);
 }
 ui-form-input .leading-icon {
   position: absolute;
@@ -259,17 +259,17 @@ ui-form-input .leading-icon > svg,
 ui-form-input .trailing-icon > svg{
   width: 1rem;
   height: 1rem;
-  color: var(--majax-text-secondary-color, #6c757d);
+  color: var(--majax-secondary-text-color, #6c757d);
 }
 ui-form-input .hint-container {
   font-size: 0.75rem;
-  color: var(--majax-text-secondary-color, #6c757d);
+  color: var(--majax-secondary-text-color, #6c757d);
   margin-top: -0.5rem;
 }
 ui-form-input .error-container {
   font-size: 0.75rem;
   margin-top: -0.5rem;
-  color: var(--majax-text-danger-color, #dc3545);
+  color: var(--majax-danger-color, #dc3545);
 }
 ui-form-input .selected-search {
   margin-top: 0.25rem;
@@ -288,7 +288,7 @@ ui-form-input .selected-search .items > *:not(:last-child) {
 ui-form-input .no-item-selected {
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
-  color: var(--majax-text-secondary-color, #6c757d);
+  color: var(--majax-secondary-text-color, #6c757d);
 }
 ui-form-input .selected-search .selected-item {
   display: flex;
@@ -311,7 +311,7 @@ ui-form-input .selected-search .selected-item-info .title {
 }
 ui-form-input .selected-search .selected-item-info .description {
   font-size: 0.75rem;
-  color: var(--majax-text-secondary-color, #6c757d);
+  color: var(--majax-secondary-text-color, #6c757d);
 }
 ui-form-input .majax-form-input-chips {
   display: flex;
@@ -325,7 +325,7 @@ ui-form-input .majax-form-input-chips > *:not(:last-child) {
 }
 ui-form-input .majax-selected-chips-count {
   font-size: 0.75rem;
-  color: var(--majax-text-secondary-color, #6c757d);
+  color: var(--majax-secondary-text-color, #6c757d);
   margin-top: -0.25rem;
   font-style: italic;
 }
