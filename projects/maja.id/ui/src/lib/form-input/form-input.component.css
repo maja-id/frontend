@@ -8,7 +8,7 @@ ui-form-input .majax-form-input-title {
 }
 
 ui-form-input .majax-form-input > *:not(:last-child) {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 ui-form-input .majax-form-input-label {
@@ -264,11 +264,11 @@ ui-form-input .trailing-icon > svg{
 ui-form-input .hint-container {
   font-size: 0.75rem;
   color: var(--majax-secondary-text-color, #6c757d);
-  margin-top: -0.5rem;
+  margin-top: -0.25rem;
 }
 ui-form-input .error-container {
   font-size: 0.75rem;
-  margin-top: -0.5rem;
+  margin-top: -0.25rem;
   color: var(--majax-danger-color, #dc3545);
 }
 ui-form-input .selected-search {
@@ -318,6 +318,9 @@ ui-form-input .majax-form-input-chips {
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
+  margin-bottom: 0.25rem;
+}
+ui-form-input .majax-form-input-chips > * {
   margin-bottom: 0.25rem;
 }
 ui-form-input .majax-form-input-chips > *:not(:last-child) {

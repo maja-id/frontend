@@ -64,4 +64,9 @@
   --majax-avatar-size-md: 1.75rem;
   --majax-avatar-size-lg: 2rem;
   --majax-avatar-size-xl: 2.5rem;
+
+
+  /* Card */
+  --majax-card-header-background-color: #fafafa;
+  --majax-card-header-text-color: var(--majax-text-color);
 }

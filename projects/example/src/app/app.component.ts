@@ -1,6 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { LayoutComponent, FormComponent, SidebarComponent, FooterComponent, HeaderComponent, AvatarComponent, ButtonComponent, DropdownComponent, FormOptions, MenuComponent } from '@maja.id/ui';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import {
+  LayoutComponent,
+  FormComponent,
+  SidebarComponent,
+  HeaderComponent,
+  ButtonComponent,
+  FormOptions,
+  MenuComponent,
+} from '@maja.id/ui';
 import { NgIconComponent } from '@ng-icons/core';
 
 @Component({
@@ -8,14 +16,12 @@ import { NgIconComponent } from '@ng-icons/core';
   standalone: true,
   imports: [
     RouterOutlet,
+    RouterModule,
     NgIconComponent,
     LayoutComponent,
     SidebarComponent,
-    FooterComponent,
     HeaderComponent,
-    AvatarComponent,
     ButtonComponent,
-    DropdownComponent,
     FormComponent,
     MenuComponent,
   ],
@@ -32,31 +38,4 @@ export class AppComponent {
       placeholder: 'Search',
     }
   ];
-  formOptions: FormOptions[] = [
-    {
-      label: 'Username',
-      name: 'tes',
-      className: 'w-50',
-      type: 'search',
-      placeholder: 'Find user by username',
-      trailingIcon: 'search',
-      api: {
-        url: 'https://api.github.com/users',
-        valueField: 'id',
-        labelField: 'login',
-        descriptionField: 'type',
-        iconField: 'avatar_url',
-        searchKey: 'userame',
-      }
-    },
-    {
-      label: 'Tanggal lahir',
-      trailingIcon: 'calendar',
-      name: 'date',
-      type: 'date',
-    }
-  ];
-  onChanged = (event: any) => {
-    console.debug(event);
-  }
 }

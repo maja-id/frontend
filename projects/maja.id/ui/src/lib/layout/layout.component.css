@@ -3,6 +3,7 @@
   flex-direction: column;
   height: 100vh;
   width: 100vw;
+  overflow: overlay;
 }
 .majax-layout.has-sidebar {
   /* width: calc(100vw - var(--majax-sidebar-width, 15rem) - var(--majax-sidebar-border-width, 1px)); */

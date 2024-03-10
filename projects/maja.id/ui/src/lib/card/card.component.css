@@ -1,0 +1,88 @@
+.majax-card {
+  box-shadow: var(--majax-card-box-shadow, 0 0 0.5rem 0 rgba(112, 112, 112, 0.1));
+  background-color: var(--majax-background-color, #fff);
+  border: 1px solid var(--majax-border-color, #e0e0e0);
+  padding: var(--majax-card-padding, 1rem);
+  border-radius: var(--majax-border-radius, 0.25rem);
+}
+.majax-card.compact {
+  padding: 0;
+}
+.majax-card .majax-card-header {
+  margin-top: calc(var(--majax-card-padding, 1rem) * -1);
+  margin-left: calc(var(--majax-card-padding, 1rem) * -1);
+  margin-right: calc(var(--majax-card-padding, 1rem) * -1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 2.5rem;
+  border-bottom: 1px solid var(--majax-border-color, #e0e0e0);
+  background-color: var(--majax-card-header-background-color, #fafafa);
+  border-top-left-radius: var(--majax-border-radius, 0.25rem);
+  border-top-right-radius: var(--majax-border-radius, 0.25rem);
+  color: var(--majax-card-header-text-color, #242424);
+}
+.majax-card.compact .majax-card-header {
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+.majax-card .majax-card-header > .majax-card-title {
+  width: calc(100% - 2.5rem);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-left: var(--majax-card-padding, 1rem);
+  padding-right: var(--majax-card-padding, 1rem);
+  font-size: var(--majax-text-size, 1rem);
+  font-weight: bold;
+  color: var(--majax-card-header-text-color, #242424);
+}
+.majax-card .majax-card-header > .majax-card-close {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.majax-card .majax-card-header > .majax-card-close > svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.majax-card .majax-card-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 2.5rem;
+  border-top: 1px solid var(--majax-border-color, #e0e0e0);
+  margin-bottom: calc(var(--majax-card-padding, 1rem) * -1);
+  margin-left: calc(var(--majax-card-padding, 1rem) * -1);
+  margin-right: calc(var(--majax-card-padding, 1rem) * -1);
+}
+.majax-card.compact .majax-card-actions {
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+.majax-card .majax-card-actions > button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 2.5rem;
+  font-weight: 500;
+  font-size: var(--majax-text-size-sm, 0.875rem);
+}
+.majax-card .majax-card-actions > button:first-child {
+  border-bottom-left-radius: var(--majax-border-radius, 0.25rem);
+}
+.majax-card .majax-card-actions > button:last-child {
+  border-bottom-right-radius: var(--majax-border-radius, 0.25rem);
+}
+.majax-card .majax-card-actions > button:not(:first-child) {
+  border-left: 1px solid var(--majax-border-color, #e0e0e0);
+}
+.majax-card .majax-card-actions > button.majax-card-primary-action {
+  color: var(--majax-color-primary, #007bff);
+}

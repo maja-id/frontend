@@ -8,24 +8,24 @@
       <ui-form [options]="searchFormOptions"></ui-form>
     </div>
     <ui-menu>
-      <div class="majax-menu-title">Tagihan</div>
+      <div class="majax-menu-title">Components</div>
       <ul>
         <li>
-          <a href="#">
-            <ng-icon class="icon" name="box" size="1rem"></ng-icon>
-            Buat Tagihan
+          <a routerLink="layout" routerLinkActive="active">
+            <ng-icon class="icon" name="folder" size="1rem"></ng-icon>
+            Layout
           </a>
         </li>
         <li>
           <a href="#">
             <ng-icon class="icon" name="folder" size="1rem"></ng-icon>
-            Data Tagihan
+            Buttons
           </a>
         </li>
         <li>
           <a href="#">
-            <ng-icon class="icon" name="bell" size="1rem"></ng-icon>
-            Notifikasi
+            <ng-icon class="icon" name="folder" size="1rem"></ng-icon>
+            Avatar
           </a>
         </li>
       </ul>
@@ -64,7 +64,7 @@
           </button>
         </div>
         <div class="space-x">
-          <input type="text" class="search-input" placeholder="search" />
+          <ui-form [options]="searchFormOptions"></ui-form>
           <ui-button>Report</ui-button>
           <ui-button data-type="primary">
             Buat Tagihan
@@ -72,9 +72,6 @@
         </div>
       </div>
     </ui-header>
-    <div style="padding: 20px;">
-      <ui-form [options]="formOptions" (changed)="onChanged($event)"></ui-form>
-    </div>
     <router-outlet />
   </div>
 </ui-layout>
