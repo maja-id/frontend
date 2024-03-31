@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { LayoutComponent as UILayoutComponent, CardComponent, SidebarComponent } from '@maja.id/ui';
+import { CardComponent } from '@maja.id/ui';
 
 @Component({
   selector: 'app-layout',
   standalone: true,
-  imports: [UILayoutComponent, CardComponent, SidebarComponent],
+  imports: [CardComponent],
   templateUrl: './layout.component.html',
-  styleUrl: './layout.component.css'
+  styleUrl: './layout.component.css',
 })
 export class LayoutComponent {
   example1 = `
