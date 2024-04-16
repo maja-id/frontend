@@ -17,3 +17,6 @@
   left: auto;
   right: 0;
 }
+.majax-sidebar.hidden {
+  display: none;
+}

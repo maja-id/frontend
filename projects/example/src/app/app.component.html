@@ -1,7 +1,7 @@
 <ui-layout>
   <ui-sidebar>
     <div class="sidebar-header">
-      <img src="https://static.maja.id/icon-64.png" class="logo"/>
+      <img src="https://static.maja.id/icon-64.png" class="logo" />
       <h1>Company Name</h1>
     </div>
     <div style="margin: 0.5rem 0.75rem 0 0.75rem">
@@ -56,19 +56,17 @@
     </ui-menu>
   </ui-sidebar>
   <div class="content">
-    <ui-header>
+    <ui-header [sticky]="true">
       <div class="app-header">
         <div>
-          <button>
+          <button (click)="toggleSidebar()">
             <ng-icon name="sidebar" size="1rem"></ng-icon>
           </button>
         </div>
         <div class="space-x">
           <ui-form [options]="searchFormOptions"></ui-form>
           <ui-button>Report</ui-button>
-          <ui-button data-type="primary">
-            Buat Tagihan
-          </ui-button>
+          <ui-button data-type="primary"> Buat Tagihan </ui-button>
         </div>
       </div>
     </ui-header>

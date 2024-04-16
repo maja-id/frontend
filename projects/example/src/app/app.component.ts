@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import {
   LayoutComponent,
@@ -8,6 +8,7 @@ import {
   ButtonComponent,
   FormOptions,
   MenuComponent,
+  SidebarService,
 } from '@maja.id/ui';
 import { NgIconComponent } from '@ng-icons/core';
 
@@ -29,6 +30,7 @@ import { NgIconComponent } from '@ng-icons/core';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
+  private sidebarService = inject(SidebarService);
   title = 'example';
   searchFormOptions: FormOptions[] = [
     {
@@ -36,6 +38,10 @@ export class AppComponent {
       type: 'text',
       leadingIcon: 'search',
       placeholder: 'Search',
-    }
+    },
   ];
+
+  toggleSidebar() {
+    this.sidebarService.toggle();
+  }
 }

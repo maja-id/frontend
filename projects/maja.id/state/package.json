@@ -2,9 +2,9 @@
   "name": "@maja.id/state",
   "version": "5.0.1",
   "peerDependencies": {
-    "@angular/common": "^17.2.0",
-    "@angular/core": "^17.2.0",
-    "dexie": "^3.2.5"
+    "@angular/common": "^17.3.4",
+    "@angular/core": "^17.3.4",
+    "dexie": "^4.0.4"
   },
   "dependencies": {
     "tslib": "^2.3.0"
